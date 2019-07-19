@@ -56,8 +56,8 @@ libx264="--enable-libx264"
 libx265="--enable-libx265"
 libzimg="--enable-libzimg"
 nonfree="--enable-nonfree"
-opencl="--enable-opencl"
-opengl="--enable-opengl"
+# opencl="--enable-opencl"
+# opengl="--enable-opengl"
 gnutls="--enable-gnutls"
 
 mediainfo="yes"
@@ -103,7 +103,7 @@ export LOCALBUILDDIR LOCALDESTDIR
 
 PKG_CONFIG_PATH="${LOCALDESTDIR}/lib/pkgconfig"
 CPPFLAGS="-I${LOCALDESTDIR}/include $fpic $osExtra"
-CFLAGS="-I${LOCALDESTDIR}/include -mtune=generic -O2 $osExtra $fpic"
+CFLAGS="-I${LOCALDESTDIR}/include -mtune=sandybridge -march=native -O3 $osExtra $fpic"
 CXXFLAGS="${CFLAGS}"
 LDFLAGS="-L${LOCALDESTDIR}/lib -pipe $osExtra"
 export PKG_CONFIG_PATH CPPFLAGS CFLAGS CXXFLAGS LDFLAGS
